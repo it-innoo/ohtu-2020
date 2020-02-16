@@ -1,6 +1,8 @@
 
 package ohtu;
 
+import java.util.Formatter;
+
 public class Player {
     private String name;
     private String nationality;
@@ -32,9 +34,35 @@ public class Player {
         this.team = team;
     }
 
+    public int getGoals() {
+        return goals;
+    }
+
+    public void setGoals(int goals) {
+        this.goals = goals;
+    }
+
+    public int getAssists() {
+        return assists;
+    }
+
+    public void setAssists(int assists) {
+        this.assists = assists;
+    }
+
+    public int getPoints() {
+        return goals + assists;
+    }
     @Override
     public String toString() {
-        return name + " team " + team + " goals " + goals + " assists " + assists;
+        /*
+        String s = name + " \t " + team + " \t " + goals + " + " + assists + " = " + getPoints();
+        return s;
+*/
+        StringBuilder sb = new StringBuilder();
+        Formatter fmt = new Formatter(sb);
+        fmt.format("%-20s %-4s %2d + %2d = %d", name, team, goals, assists, getPoints());
+        return sb.toString();
     }
 
 }

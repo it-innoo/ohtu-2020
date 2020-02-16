@@ -8,6 +8,7 @@ package ohtu;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -35,12 +36,14 @@ public class Main {
 
         List<Player> finPlayers = Arrays.asList(players);
 
-        List<Player> result = finPlayers.stream()
-                .filter(line -> "FIN".equals(line.getNationality()))     // we want finnish players
-                .collect(Collectors.toList());              // collect the output and convert streams to a List
+        List<Player> listFins = finPlayers.stream()
+                .filter(p -> "FIN".equals(p.getNationality()))      // we want finnish players
+                .sorted(Comparator.comparingInt(Player::getPoints)  // sprt
+		.reversed())                                        // by ascending order 
+                .collect(Collectors.toList());                      // collect the output and convert
+                                                                    //streams to a List
 
-        result.forEach(System.out::println);                //output : spring, node
+        listFins.forEach(System.out::println);                      //output : spring, node
 
-        
     }
 }
