@@ -1,7 +1,11 @@
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
 
 mainClassName = 'ohtu.Main'
+
 
 repositories {
     jcenter()
