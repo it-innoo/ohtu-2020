@@ -24,7 +24,15 @@ public class Stepdefs {
         WebElement element = driver.findElement(By.linkText("login"));       
         element.click();   
     }    
-    
+
+    @Given("command new user is selected")
+    public void commandNewUserIsSelected() {
+        // Write code here that turns the phrase above into concrete actions
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click();
+    }
+
     @When("correct username {string} and password {string} are given")
     public void correctUsernameAndPasswordAreGiven(String username, String password) {
         logInWith(username, password);
@@ -55,7 +63,49 @@ public class Stepdefs {
     public void usernameAndPasswordAreGiven(String username, String password) throws Throwable {
         logInWith(username, password);
     }   
+
+    @When("a valid username {string} and password {string} and matching password confirmation are entered")
+    public void aValidUsernameAndPasswordAndMatchingPasswordConfirmationAreEntered(String username, String password) {
+        // Write code here that turns the phrase above into concrete actions
+        String passwordConfirmation = driver.findElement(By.name("passwordConfirmation")).getText();
+        createUser(username, password, password);
+    }
+
+    @When("too short username {string} and password {string} and matching password confirmation are entered")
+    public void tooShortUsernameAndPasswordAndMatchingPasswordConfirmationAreEntered(
+            String username, String password) {
+        // Write code here that turns the phrase above into concrete actions
+        String passwordConfirmation = driver.findElement(By.name("passwordConfirmation")).getText();
+        createUser(username, password, passwordConfirmation);
+    }
+
+    @When("a valid username {string} and too short password {string} are entered")
+    public void aValidUsernameAndTooShortPasswordAreEntered(String username, String password) {
+        // Write code here that turns the phrase above into concrete actions
+        String passwordConfirmation = driver.findElement(By.name("passwordConfirmation")).getText();
+        createUser(username, password, passwordConfirmation);
+    }
+
+    @When("a valid username {string} and password {string} and invalid passwordConfirmation {string} are entered")
+    public void aValidUsernameAndPasswordAndInvalidPasswordConfirmationAreEntered(
+            String username, String password, String passwordConfirmation) {
+        // Write code here that turns the phrase above into concrete actions
+        createUser(username, password, passwordConfirmation);
+    }
+
     
+    @Then("a new user is created")
+    public void aNewUserIsCreated() {
+        // Write code here that turns the phrase above into concrete actions
+        pageHasContent("Welcome to Ohtu Application!");
+    }
+
+    @Then("user is not created and error {string} is reported")
+    public void userIsNotCreatedAndErrorIsReported(String error) {
+        // Write code here that turns the phrase above into concrete actions
+        pageHasContent(error);
+    }
+
     @After
     public void tearDown(){
         driver.quit();
@@ -75,5 +125,18 @@ public class Stepdefs {
         element.sendKeys(password);
         element = driver.findElement(By.name("login"));
         element.submit();  
-    } 
+    }
+
+    private void createUser(String username, String password, String passwordConfirmation) {
+        assertTrue(driver.getPageSource().contains("Create username and give password"));
+        WebElement element = driver.findElement(By.name("username"));
+        element.sendKeys(username);
+        element = driver.findElement(By.name("password"));
+        element.sendKeys(password);
+        element = driver.findElement(By.name("passwordConfirmation"));
+        element.sendKeys(passwordConfirmation);
+        element = driver.findElement(By.name("signup"));
+        element.submit();
+        
+    }
 }
