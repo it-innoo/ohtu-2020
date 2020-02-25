@@ -8,3 +8,6 @@ arto42814;otra
 arto78063;otra
 arto50744;otra
 liisa;salainen1
+lea;salainen1
+leena;salainen1
+hatman;1hatman2

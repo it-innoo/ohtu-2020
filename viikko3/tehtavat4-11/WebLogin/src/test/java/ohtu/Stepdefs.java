@@ -33,6 +33,47 @@ public class Stepdefs {
         element.click();
     }
 
+    @Given("command logout is selected")
+    public void commandLogoutIsSelected() {
+        // Write code here that turns the phrase above into concrete actions
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("logout"));       
+        element.click();
+    }
+
+    @Given("user with username {string} with password {string} is successfully created")
+    public void userWithUsernameWithPasswordIsSuccessfullyCreated(String username , String password) {
+        // Write code here that turns the phrase above into concrete actions
+        // throw new cucumber.api.PendingException();
+        // createUser(username, password, password);
+        // logInWith(username, password);
+        // pageHasContent("Ohtu Application main page");
+        commandNewUserIsSelected();
+        // createUser(username, password, password);
+        aValidUsernameAndPasswordAndInvalidPasswordConfirmationAreEntered(username, password, password);
+        aNewUserIsCreated();
+        pageHasButton("continue to application mainpage");
+
+        WebElement element = driver.findElement(By.linkText("continue to application mainpage"));       
+        element.click();
+
+        pageHasButton("logout");
+
+        element = driver.findElement(By.linkText("logout"));       
+        element.click();
+
+    }
+
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password) {
+        // Write code here that turns the phrase above into concrete actions
+        commandNewUserIsSelected();
+
+        tooShortUsernameAndPasswordAndMatchingPasswordConfirmationAreEntered(username, password);
+        WebElement element = driver.findElement(By.linkText("back to home"));
+        element.click();
+    }
+    
     @When("correct username {string} and password {string} are given")
     public void correctUsernameAndPasswordAreGiven(String username, String password) {
         logInWith(username, password);
@@ -116,7 +157,11 @@ public class Stepdefs {
     private void pageHasContent(String content) {
         assertTrue(driver.getPageSource().contains(content));
     }
-        
+
+    private void pageHasButton(String text) {
+        assertTrue(driver.findElement(By.linkText(text)) != null);
+    }
+
     private void logInWith(String username, String password) {
         assertTrue(driver.getPageSource().contains("Give your credentials to login"));
         WebElement element = driver.findElement(By.name("username"));
@@ -138,5 +183,11 @@ public class Stepdefs {
         element = driver.findElement(By.name("signup"));
         element.submit();
         
+    }
+
+    private void logout() {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("logout"));       
+        element.click(); 
     }
 }
