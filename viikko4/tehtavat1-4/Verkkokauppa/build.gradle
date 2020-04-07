@@ -1,8 +1,18 @@
 
+
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'jacoco'
+}
+
+/*
 apply plugin: 'java'
 
 apply plugin: 'application'
-
+apply plugin: "jacoco" 
+*/
 repositories {
     jcenter()
 }
