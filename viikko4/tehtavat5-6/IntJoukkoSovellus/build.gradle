@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'jacoco'
+    id 'checkstyle'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:28.1-jre'
+    testImplementation 'junit:junit:4.12'
+}
+
+mainClassName = 'ohtu.intjoukkosovellus.Main'
+
+run {
+    standardInput = System.in
+}
