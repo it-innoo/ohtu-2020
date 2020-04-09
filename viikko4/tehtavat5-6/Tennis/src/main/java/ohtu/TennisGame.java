@@ -17,25 +17,36 @@ public class TennisGame {
 
     private int player1Score;
     private int player2Score;
-    private final String player1Name;
-    private final String player2Name;
+    private String player1Name;
+    private String player2Name;
 
     private final Map<Integer, String> points;
+    private final Map<Integer, String> game;
 
     public TennisGame(String player1Name, String player2Name) {
-        this.player1Score = LOVE;
-        this.player2Score = LOVE;
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        this.player1Score = LOVE;
+        this.player2Score = LOVE;
 
         points = new HashMap<>();
+        game = new HashMap<>();
+        init();
+    }
+
+    private void init() {
         points.put(LOVE, "Love");
         points.put(FIFTEEN, "Fifteen");
         points.put(THIRTY, "Thirty");
         points.put(FORTY, "Forty");
         points.put(DEUCE, "Deuce");
+        
+        game.put(-2, "Win for " + player2Name);
+        game.put(2, "Win for " + player1Name);
+        game.put(1, "Advantage " + player1Name);
+        game.put(-1, "Advantage " + player2Name);
     }
-
+    
     public void wonPoint(String playerName) {
         if ("player1".equals(playerName)) {
             player1Score++;
@@ -47,19 +58,18 @@ public class TennisGame {
 
     public String getScore() {
         StringBuilder score = new StringBuilder();
-        score.append(tilanne());
-
-        //score.append(tilanneJosTasan());
-        /*
+        
         if (player1Score == player2Score) {
             score.append(deuce());
             return score.toString();
         }
+        
         if (player1Score >= DEUCE || player2Score >= DEUCE) {
             score.append(avantage());
             return score.toString();
         }
-         */
+        score.append(tilanne());
+
         return score.toString();
     }
 
@@ -79,37 +89,22 @@ public class TennisGame {
     private StringBuilder avantage() {
         StringBuilder score = new StringBuilder();
 
-        int minusResult = player1Score - player2Score;
-        if (minusResult == 1) {
-            score.append("Advantage player1");
-            return score;
-        }
-        if (minusResult == -1) {
-            score.append("Advantage player2");
-            return score;
-        }
-        if (minusResult >= 2) {
-            score.append("Win for player1");
-            return score;
-        }
-        score.append("Win for player2");
+        score.append(which());
 
         return score;
     }
 
+    private String which() {
+        int minusResult = player1Score - player2Score;
+        minusResult = minusResult < -2 ? -2 : minusResult;
+        minusResult = minusResult > 2 ? 2 : minusResult;
+
+        return game.get(minusResult);
+    }
+    
     private StringBuilder tilanne() {
         StringBuilder score = new StringBuilder();
 
-        
-        if (player1Score == player2Score) {
-            score.append(deuce());
-            return score;
-        }
-        
-        if (player1Score >= DEUCE || player2Score >= DEUCE) {
-            score.append(avantage());
-            return score;
-        }
         
         for (int i = 1; i <= 2; i++) {
             if (i == 1) {
@@ -119,42 +114,6 @@ public class TennisGame {
                 score.append(points.get(player2Score));
             }
         }
-        return score;
-    }
-
-    private StringBuilder tilanneJosTasan() {
-        StringBuilder score = new StringBuilder();
-
-        if (player1Score == player2Score) {
-            score.append(deuce());
-        }
-
-        return score;
-    }
-
-    private StringBuilder tilannaJosDeuce() {
-        StringBuilder score = new StringBuilder();
-
-        if (player1Score >= DEUCE || player2Score >= DEUCE) {
-            score.append(avantage());
-        }
-        return score;
-    }
-
-    private StringBuilder tilannaJosAlle40() {
-        StringBuilder score = new StringBuilder();
-
-        if (player1Score < FORTY && player2Score < FORTY) {
-            for (int i = 1; i <= 2; i++) {
-                if (i == 1) {
-                    score.append(points.get(player1Score));
-                } else {
-                    score.append("-");
-                    score.append(points.get(player2Score));
-                }
-            }
-        }
-
         return score;
     }
 }

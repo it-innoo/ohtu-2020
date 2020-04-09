@@ -8,7 +8,7 @@ package ohtu;
 public class App {
 
     public static void main(String[] args) {
-        TennisGameRefactored game = new TennisGameRefactored("player1", "player2");
+        TennisGame game = new TennisGame("player1", "player2");
 
         System.out.println(game.getScore());
 
@@ -28,7 +28,7 @@ public class App {
         System.out.println(game.getScore());
         
         System.out.println("===== NEW GAME =====");
-        game = new TennisGameRefactored("player1", "player2");
+        game = new TennisGame("player1", "player2");
         System.out.println("");
         
         System.out.println(game.getScore());
