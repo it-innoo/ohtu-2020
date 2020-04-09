@@ -1,8 +1,7 @@
-
 package ohtu;
 
-
 public class Kauppa {
+
     private int yhteishinta;
     private Pankki pankki;
     private Viitegeneraattori viitegeneraattori;
@@ -12,16 +11,15 @@ public class Kauppa {
         this.viitegeneraattori = viitegeneraattori;
     }
 
-
-    public void aloitaOstokset(){
+    public void aloitaOstokset() {
         yhteishinta = 0;
     }
-    
-    public void lisaaOstos(int hinta){
+
+    public void lisaaOstos(int hinta) {
         yhteishinta += hinta;
     }
-    
-    public void maksa(String tilinumero){
+
+    public void maksa(String tilinumero) {
         pankki.maksa(tilinumero, yhteishinta, viitegeneraattori.seruaava());
     }
 }

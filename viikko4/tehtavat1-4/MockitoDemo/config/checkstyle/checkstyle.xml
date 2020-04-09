@@ -311,7 +311,9 @@
             <property name="max" value="3"/>
         </module>
 
-        <module name="MagicNumber"/>
+        <!--
+<module name="MagicNumber"/>
+        -->
         <module name="BooleanExpressionComplexity"/>
         <module name="ClassDataAbstractionCoupling"/>
         <module name="ClassFanOutComplexity"/>
