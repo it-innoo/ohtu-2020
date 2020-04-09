@@ -1,7 +1,8 @@
 package ohtu.intjoukkosovellus;
 
 /**
- *
+ * Start IntJoukkosovellus.
+ * 
  * @author jukka
  */
 public class Main {

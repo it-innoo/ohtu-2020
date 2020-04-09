@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ohtu.intjoukkosovellus.komento;
 
 import ohtu.intjoukkosovellus.IntJoukko;
@@ -10,7 +6,8 @@ import ohtu.intjoukkosovellus.Sovellus;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Laskee kahden joukon leikkauksen.
+ * 
  * @author jukka
  */
 public class Leikkaus extends Komento {

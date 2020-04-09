@@ -7,5 +7,5 @@ package ohtu;
  * @author jukka
  */
 public interface Ehto {
-    boolean test(int score1, int score2);
+    boolean test(Score score1, Score score2);
 }

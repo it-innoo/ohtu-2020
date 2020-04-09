@@ -3,9 +3,10 @@ package ohtu.intjoukkosovellus;
 public class IntJoukko {
 
     // aloitustalukon koko
-    public final static int KAPASITEETTI = 5;
+    public static final int KAPASITEETTI = 5;
     // luotava uusi taulukko on näin paljon isompi kuin vanha
-    public final static int OLETUSKASVATUS = 5;
+    public static final int OLETUSKASVATUS = 5;
+    private static final int ZERO = 0;
     // Uusi taulukko on tämän verran vanhaa suurempi.
     private int kasvatuskoko;
     // Joukon luvut säilytetään taulukon alkupäässä. 
@@ -23,15 +24,15 @@ public class IntJoukko {
     }
 
     public IntJoukko(int kapasiteetti, int kasvatuskoko) {
-        if (kapasiteetti < 0) {
+        if (kapasiteetti < ZERO) {
             throw new IndexOutOfBoundsException("Kapasitteetti väärin");
         }
-        if (kasvatuskoko < 0) {
+        if (kasvatuskoko < ZERO) {
             throw new IndexOutOfBoundsException("kapasiteetti2");
         }
         luvut = new int[kapasiteetti];
 
-        alkioidenLkm = 0;
+        alkioidenLkm = ZERO;
         this.kasvatuskoko = kasvatuskoko;
 
     }

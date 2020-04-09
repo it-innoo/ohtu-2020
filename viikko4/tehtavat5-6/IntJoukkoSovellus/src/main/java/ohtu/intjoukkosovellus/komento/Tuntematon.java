@@ -5,7 +5,8 @@ import ohtu.intjoukkosovellus.Sovellus;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Tuntematon komento.
+ * 
  * @author jukka
  */
 public class Tuntematon extends Komento {
@@ -16,7 +17,7 @@ public class Tuntematon extends Komento {
 
     @Override
     public void suorita() {
-        io.print("sallitut komennot: "+ Sovellus.KOMENNOT);
+        io.print("sallitut komennot: " + Sovellus.KOMENNOT);
     }
     
 }

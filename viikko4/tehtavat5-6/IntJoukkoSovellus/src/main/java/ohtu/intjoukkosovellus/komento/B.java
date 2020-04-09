@@ -4,7 +4,8 @@ package ohtu.intjoukkosovellus.komento;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Tulostaa joukon.
+ * 
  * @author jukka
  */
 public class B extends Komento {

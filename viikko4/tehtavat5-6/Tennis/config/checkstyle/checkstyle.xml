@@ -13,6 +13,10 @@
         <property name="eachLine" value="true"/>
     </module>
 
+    <module name="FileLength">
+        <property name="max" value="250"/>
+    </module>
+        
     <module name="LineLength">
         <property name="fileExtensions" value="java"/>
         <property name="max" value="100"/>
@@ -313,8 +317,5 @@
         <module name="JavaNCSS"/>
         <module name="NPathComplexity"/>
         
-        <module name="MagicNumber">
-            <property name="ignoreNumbers" value="-1, 1, 2"/>
-        </module>
     </module>
 </module>

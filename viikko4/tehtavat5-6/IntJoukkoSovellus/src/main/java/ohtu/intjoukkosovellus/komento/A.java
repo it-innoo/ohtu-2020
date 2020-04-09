@@ -5,7 +5,8 @@ import ohtu.intjoukkosovellus.Sovellus;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Tulostaa joukon.
+ * 
  * @author jukka
  */
 public class A extends Komento {

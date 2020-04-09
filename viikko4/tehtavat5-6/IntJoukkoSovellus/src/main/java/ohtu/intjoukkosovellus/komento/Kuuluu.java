@@ -6,7 +6,8 @@ import ohtu.intjoukkosovellus.Sovellus;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Kuuluuko alkio joukkoon.
+ * 
  * @author jukka
  */
 public class Kuuluu extends Komento {

@@ -4,11 +4,14 @@ package ohtu.intjoukkosovellus.komento;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Exit sovellus.
+ * 
  * @author jukka
  */
 public class Lopeta extends Komento {
 
+    private static final int SUCCESS = 0;
+    
     public Lopeta(IO io) {
         super(io);
     }
@@ -16,7 +19,7 @@ public class Lopeta extends Komento {
     @Override
     public void suorita() {
         io.print("Lopetetaan, moikka!");
-        System.exit(0);
+        System.exit(SUCCESS);
     }
     
 }

@@ -6,7 +6,8 @@ import ohtu.intjoukkosovellus.Sovellus;
 import ohtu.intjoukkosovellus.io.IO;
 
 /**
- *
+ * Poistaa alkion joukosta.
+ * 
  * @author jukka
  */
 public class Poista extends Komento {
