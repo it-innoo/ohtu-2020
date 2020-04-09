@@ -1,15 +1,18 @@
 
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+    id 'java'
+    id 'application'
+    id 'checkstyle'
+}
 
 repositories {
     jcenter()
 }
 
 dependencies {
-    compile 'com.google.guava:guava:23.0'
-    testCompile 'org.mockito:mockito-core:3.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.google.guava:guava:23.0'
+    testImplementation 'org.mockito:mockito-core:3.1.0'
+    testImplementation 'junit:junit:4.12'
 }
 
 mainClassName = 'ohtu.Main'
