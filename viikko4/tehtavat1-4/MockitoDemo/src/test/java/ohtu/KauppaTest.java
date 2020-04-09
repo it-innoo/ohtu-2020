@@ -1,8 +1,8 @@
 package ohtu;
 
-import org.junit.*;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+
+import org.junit.*;
 
 public class KauppaTest {
 
@@ -64,7 +64,7 @@ public class KauppaTest {
     public void kaytetaanMaksussaPalautettuaViiteta() {
         Pankki mockPankki = mock(Pankki.class);
         Viitegeneraattori mockViite = mock(Viitegeneraattori.class);
-        
+
         // määrittelemme minkä arvon viitegeneraattori palauttaa kun sen metodia
         // seuraava() kutsutaan
         when(mockViite.seruaava()).thenReturn(55);
@@ -119,10 +119,10 @@ public class KauppaTest {
         Viitegeneraattori mockViite = mock(Viitegeneraattori.class);
         // määritellään että metodi palauttaa ensimmäisellä kutsukerralla 1, toisella 2 
         // ja kolmannella 3
-        when(mockViite.seruaava()).
-                thenReturn(1).
-                thenReturn(2).
-                thenReturn(3);
+        when(mockViite.seruaava())
+                .thenReturn(1)
+                .thenReturn(2)
+                .thenReturn(3);
 
         kauppa = new Kauppa(mockPankki, mockViite);
 
@@ -132,20 +132,20 @@ public class KauppaTest {
 
         // varmistetaan, että nyt käytössä ensimmäisenä pyydetty viite
         verify(mockPankki).maksa(anyString(), anyInt(), eq(1));
-        
+
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(1);
         kauppa.maksa("1222");
 
         // ... toisena pyydetty viite
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(2));   
-        
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(2));
+
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(1);
         kauppa.maksa("4321");
 
         // ... ja kolmantena pyydetty viite        
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(3));           
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(3));
 
     }
 }
