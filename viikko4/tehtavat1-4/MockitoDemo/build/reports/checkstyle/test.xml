@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.27">
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/MockitoDemo/src/test/java/ohtu/KauppaTest.java">
+<error line="84" column="5" severity="warning" message="Metodin pituus on 17 riviä (suurin sallittu on 15)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="116" column="5" severity="warning" message="Metodin pituus on 21 riviä (suurin sallittu on 15)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+</checkstyle>

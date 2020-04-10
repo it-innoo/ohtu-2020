@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.27">
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/IntJoukko.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/Main.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/Sovellus.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/io/IO.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/io/KonsoliIO.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/A.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/B.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/C.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Erotus.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Komento.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Komentotehdas.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Kuuluu.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Leikkaus.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Lisaa.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Lopeta.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Poista.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Tuntematon.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat5-6/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/komento/Yhdiste.java">
+</file>
+</checkstyle>

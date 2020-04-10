@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.27">
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/MockitoDemo/src/main/java/ohtu/Kauppa.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/MockitoDemo/src/main/java/ohtu/Main.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/MockitoDemo/src/main/java/ohtu/Pankki.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/MockitoDemo/src/main/java/ohtu/Viitegeneraattori.java">
+</file>
+</checkstyle>

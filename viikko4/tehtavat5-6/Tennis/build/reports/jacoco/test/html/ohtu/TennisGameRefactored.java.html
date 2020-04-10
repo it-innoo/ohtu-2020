@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TennisGameRefactored.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tennis</a> &gt; <a href="index.source.html" class="el_package">ohtu</a> &gt; <span class="el_source">TennisGameRefactored.java</span></div><h1>TennisGameRefactored.java</h1><pre class="source lang-java linenums">
+package ohtu;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * Game
+ * A game consists of a sequence of points played with the same player serving.
+ * A game is won by the first player to have won at least four points in total
+ * and at least two points more than the opponent. The running score of each game
+ * is described in a manner peculiar to tennis: scores from zero to three points
+ * are described as &quot;love&quot;, &quot;15&quot;, &quot;30&quot;, and &quot;40&quot;, respectively.
+ * If at least three points have been scored by each player, making the player's scores equal
+ * at 40 apiece, the score is not called out as &quot;40–40&quot;, but rather as &quot;deuce&quot;.
+ * If at least three points have been scored by each side and a player has one more point
+ * than his opponent, the score of the game is &quot;advantage&quot; for the player in the lead.
+ * During informal games, &quot;advantage&quot; can also be called &quot;ad in&quot; or &quot;van in&quot; when
+ * the serving player is ahead, and &quot;ad out&quot; or &quot;van out&quot; when the receiving player is ahead;
+ * alternatively, either player may simply call out &quot;my ad&quot; or &quot;your ad&quot; during informal play.
+ * 
+ * @author jukka
+ */
+public class TennisGameRefactored {
+    private final Player player1;
+    private final Player player2;
+    private final Map&lt;String,Player&gt; players;
+
+<span class="nc" id="L31">    public TennisGameRefactored(String player1Name, String player2Name) {</span>
+<span class="nc" id="L32">        player1 = new Player(player1Name);</span>
+<span class="nc" id="L33">        player2 = new Player(player2Name);</span>
+<span class="nc" id="L34">        players = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L35">        players.put(player1Name, player1);</span>
+<span class="nc" id="L36">        players.put(player2Name, player2);</span>
+<span class="nc" id="L37">    }</span>
+    
+    public void wonPoint(String playerName) {
+<span class="nc" id="L40">        Player player = players.get(playerName);</span>
+<span class="nc" id="L41">        player.setScore(player.getScore().next());</span>
+<span class="nc" id="L42">    }</span>
+    
+    public String getScore() {
+<span class="nc" id="L45">        StringBuilder scoreboard = new StringBuilder();</span>
+        
+        
+        
+<span class="nc" id="L49">        scoreboard.append(player1.getScore());</span>
+<span class="nc" id="L50">        scoreboard.append(&quot;-&quot;);</span>
+<span class="nc" id="L51">        scoreboard.append(player2.getScore());</span>
+        
+<span class="nc" id="L53">        return scoreboard.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

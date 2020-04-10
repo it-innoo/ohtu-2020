@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>KonsoliIO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IntJoukkoSovellus</a> &gt; <a href="index.source.html" class="el_package">ohtu.intjoukkosovellus.io</a> &gt; <span class="el_source">KonsoliIO.java</span></div><h1>KonsoliIO.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ohtu.intjoukkosovellus.io;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author jukka
+ */
+public class KonsoliIO implements IO {
+
+    private Scanner lukija;
+
+<span class="nc" id="L18">    public KonsoliIO() {</span>
+<span class="nc" id="L19">        lukija = new Scanner(System.in);</span>
+<span class="nc" id="L20">    }</span>
+    
+    @Override
+    public int nextInt() {
+<span class="nc" id="L24">        return Integer.valueOf(lukija.nextLine());</span>
+    }
+
+    @Override
+    public void print(String m) {
+<span class="nc" id="L29">        System.out.println(m);</span>
+<span class="nc" id="L30">    }</span>
+
+    @Override
+    public String nextLine() {
+<span class="nc" id="L34">        return lukija.nextLine();</span>
+    }
+
+    @Override
+    public int nextInt(String kehote) {
+<span class="nc" id="L39">        print(kehote);</span>
+<span class="nc" id="L40">        return nextInt();</span>
+    }
+
+    @Override
+    public String nextLine(String kehote) {
+<span class="nc" id="L45">        print(kehote);</span>
+<span class="nc" id="L46">        return nextLine();</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

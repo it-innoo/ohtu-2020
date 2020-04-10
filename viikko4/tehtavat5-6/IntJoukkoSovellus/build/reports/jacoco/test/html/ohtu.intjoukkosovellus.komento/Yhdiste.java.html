@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Yhdiste.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IntJoukkoSovellus</a> &gt; <a href="index.source.html" class="el_package">ohtu.intjoukkosovellus.komento</a> &gt; <span class="el_source">Yhdiste.java</span></div><h1>Yhdiste.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ohtu.intjoukkosovellus.komento;
+
+import ohtu.intjoukkosovellus.IntJoukko;
+import ohtu.intjoukkosovellus.Sovellus;
+import ohtu.intjoukkosovellus.io.IO;
+
+/**
+ *
+ * @author jukka
+ */
+public class Yhdiste extends Komento {
+
+    public Yhdiste(IO io) {
+<span class="nc" id="L19">        super(io);</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public void suorita() {
+<span class="nc" id="L24">        IntJoukko joukko1 = Sovellus.joukot.get(io.nextLine(&quot;1. joukko? ? &quot;));</span>
+<span class="nc" id="L25">        IntJoukko joukko2 = Sovellus.joukot.get(io.nextLine(&quot;2. joukko? ? &quot;));</span>
+
+<span class="nc" id="L27">        io.print(&quot;A yhdiste B = &quot;</span>
+<span class="nc" id="L28">                + IntJoukko.yhdiste(joukko1, joukko2).toString());</span>
+<span class="nc" id="L29">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

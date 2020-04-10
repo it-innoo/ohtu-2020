@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TennisGame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tennis</a> &gt; <a href="index.source.html" class="el_package">ohtu</a> &gt; <span class="el_source">TennisGame.java</span></div><h1>TennisGame.java</h1><pre class="source lang-java linenums">package ohtu;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TennisGame {
+
+<span class="nc" id="L8">    enum Points {</span>
+<span class="nc" id="L9">        LOVE, FIFTEEN, THIRTY, FORTY, DEUCE, ADVANTAGE</span>
+    }
+
+    private static final int LOVE = 0;
+    private static final int FIFTEEN = 1;
+    private static final int THIRTY = 2;
+    private static final int FORTY = 3;
+    private static final int DEUCE = 4;
+
+    private int player1Score;
+    private int player2Score;
+    private final String player1Name;
+    private final String player2Name;
+
+    private final Map&lt;Integer, String&gt; points;
+
+<span class="fc" id="L25">    public TennisGame(String player1Name, String player2Name) {</span>
+<span class="fc" id="L26">        this.player1Score = LOVE;</span>
+<span class="fc" id="L27">        this.player2Score = LOVE;</span>
+<span class="fc" id="L28">        this.player1Name = player1Name;</span>
+<span class="fc" id="L29">        this.player2Name = player2Name;</span>
+
+<span class="fc" id="L31">        points = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L32">        points.put(LOVE, &quot;Love&quot;);</span>
+<span class="fc" id="L33">        points.put(FIFTEEN, &quot;Fifteen&quot;);</span>
+<span class="fc" id="L34">        points.put(THIRTY, &quot;Thirty&quot;);</span>
+<span class="fc" id="L35">        points.put(FORTY, &quot;Forty&quot;);</span>
+<span class="fc" id="L36">        points.put(DEUCE, &quot;Deuce&quot;);</span>
+<span class="fc" id="L37">    }</span>
+
+    public void wonPoint(String playerName) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (&quot;player1&quot;.equals(playerName)) {</span>
+<span class="fc" id="L41">            player1Score++;</span>
+<span class="fc" id="L42">            return;</span>
+        }
+
+<span class="fc" id="L45">        player2Score++;</span>
+<span class="fc" id="L46">    }</span>
+
+    public String getScore() {
+<span class="fc" id="L49">        StringBuilder score = new StringBuilder();</span>
+<span class="fc" id="L50">        score.append(tilanne());</span>
+
+        //score.append(tilanneJosTasan());
+        /*
+        if (player1Score == player2Score) {
+            score.append(deuce());
+            return score.toString();
+        }
+        if (player1Score &gt;= DEUCE || player2Score &gt;= DEUCE) {
+            score.append(avantage());
+            return score.toString();
+        }
+         */
+<span class="fc" id="L63">        return score.toString();</span>
+    }
+
+    private StringBuilder deuce() {
+<span class="fc" id="L67">        StringBuilder score = new StringBuilder();</span>
+
+<span class="pc bpc" id="L69" title="1 of 4 branches missed.">        if (player1Score &gt;= DEUCE || player2Score &gt;= DEUCE) {</span>
+<span class="fc" id="L70">            score.append(&quot;Deuce&quot;);</span>
+<span class="fc" id="L71">            return score;</span>
+        }
+<span class="fc" id="L73">        score.append(points.get(player1Score));</span>
+<span class="fc" id="L74">        score.append(&quot;-All&quot;);</span>
+
+<span class="fc" id="L76">        return score;</span>
+    }
+
+    private StringBuilder avantage() {
+<span class="fc" id="L80">        StringBuilder score = new StringBuilder();</span>
+
+<span class="fc" id="L82">        int minusResult = player1Score - player2Score;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (minusResult == 1) {</span>
+<span class="fc" id="L84">            score.append(&quot;Advantage player1&quot;);</span>
+<span class="fc" id="L85">            return score;</span>
+        }
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (minusResult == -1) {</span>
+<span class="fc" id="L88">            score.append(&quot;Advantage player2&quot;);</span>
+<span class="fc" id="L89">            return score;</span>
+        }
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (minusResult &gt;= 2) {</span>
+<span class="fc" id="L92">            score.append(&quot;Win for player1&quot;);</span>
+<span class="fc" id="L93">            return score;</span>
+        }
+<span class="fc" id="L95">        score.append(&quot;Win for player2&quot;);</span>
+
+<span class="fc" id="L97">        return score;</span>
+    }
+
+    private StringBuilder tilanne() {
+<span class="fc" id="L101">        StringBuilder score = new StringBuilder();</span>
+
+        
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (player1Score == player2Score) {</span>
+<span class="fc" id="L105">            score.append(deuce());</span>
+<span class="fc" id="L106">            return score;</span>
+        }
+        
+<span class="fc bfc" id="L109" title="All 4 branches covered.">        if (player1Score &gt;= DEUCE || player2Score &gt;= DEUCE) {</span>
+<span class="fc" id="L110">            score.append(avantage());</span>
+<span class="fc" id="L111">            return score;</span>
+        }
+        
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        for (int i = 1; i &lt;= 2; i++) {</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">            if (i == 1) {</span>
+<span class="fc" id="L116">                score.append(points.get(player1Score));</span>
+            } else {
+<span class="fc" id="L118">                score.append(&quot;-&quot;);</span>
+<span class="fc" id="L119">                score.append(points.get(player2Score));</span>
+            }
+        }
+<span class="fc" id="L122">        return score;</span>
+    }
+
+    private StringBuilder tilanneJosTasan() {
+<span class="nc" id="L126">        StringBuilder score = new StringBuilder();</span>
+
+<span class="nc bnc" id="L128" title="All 2 branches missed.">        if (player1Score == player2Score) {</span>
+<span class="nc" id="L129">            score.append(deuce());</span>
+        }
+
+<span class="nc" id="L132">        return score;</span>
+    }
+
+    private StringBuilder tilannaJosDeuce() {
+<span class="nc" id="L136">        StringBuilder score = new StringBuilder();</span>
+
+<span class="nc bnc" id="L138" title="All 4 branches missed.">        if (player1Score &gt;= DEUCE || player2Score &gt;= DEUCE) {</span>
+<span class="nc" id="L139">            score.append(avantage());</span>
+        }
+<span class="nc" id="L141">        return score;</span>
+    }
+
+    private StringBuilder tilannaJosAlle40() {
+<span class="nc" id="L145">        StringBuilder score = new StringBuilder();</span>
+
+<span class="nc bnc" id="L147" title="All 4 branches missed.">        if (player1Score &lt; FORTY &amp;&amp; player2Score &lt; FORTY) {</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">            for (int i = 1; i &lt;= 2; i++) {</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">                if (i == 1) {</span>
+<span class="nc" id="L150">                    score.append(points.get(player1Score));</span>
+                } else {
+<span class="nc" id="L152">                    score.append(&quot;-&quot;);</span>
+<span class="nc" id="L153">                    score.append(points.get(player2Score));</span>
+                }
+            }
+        }
+
+<span class="nc" id="L158">        return score;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

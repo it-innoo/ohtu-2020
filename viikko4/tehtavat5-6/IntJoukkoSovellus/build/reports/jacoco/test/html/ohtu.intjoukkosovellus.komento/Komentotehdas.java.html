@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Komentotehdas.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IntJoukkoSovellus</a> &gt; <a href="index.source.html" class="el_package">ohtu.intjoukkosovellus.komento</a> &gt; <span class="el_source">Komentotehdas.java</span></div><h1>Komentotehdas.java</h1><pre class="source lang-java linenums">
+package ohtu.intjoukkosovellus.komento;
+
+import java.util.HashMap;
+import java.util.Map;
+import ohtu.intjoukkosovellus.io.IO;
+
+/**
+ *
+ * @author jukka
+ */
+public class Komentotehdas {
+    private final Map&lt;String, Komento&gt; komennot;
+    private final Komento tuntematon;
+
+<span class="nc" id="L16">    public Komentotehdas(IO io) {</span>
+<span class="nc" id="L17">        komennot = new HashMap&lt;&gt;();</span>
+        
+<span class="nc" id="L19">        komennot.put(&quot;a&quot;, new A(io));</span>
+<span class="nc" id="L20">        komennot.put(&quot;b&quot;, new B(io));</span>
+<span class="nc" id="L21">        komennot.put(&quot;c&quot;, new C(io));</span>
+        
+<span class="nc" id="L23">        komennot.put(&quot;lisää&quot;, new Lisaa(io));</span>
+<span class="nc" id="L24">        komennot.put(&quot;li&quot;, new Lisaa(io));</span>
+        
+<span class="nc" id="L26">        komennot.put(&quot;poista&quot;, new Poista(io));</span>
+<span class="nc" id="L27">        komennot.put(&quot;p&quot;, new Poista(io));</span>
+        
+<span class="nc" id="L29">        komennot.put(&quot;kuuluu&quot;, new Kuuluu(io));</span>
+<span class="nc" id="L30">        komennot.put(&quot;k&quot;, new Kuuluu(io));</span>
+
+<span class="nc" id="L32">        komennot.put(&quot;yhdiste&quot;, new Yhdiste(io));</span>
+<span class="nc" id="L33">        komennot.put(&quot;y&quot;, new Yhdiste(io));</span>
+
+<span class="nc" id="L35">        komennot.put(&quot;leikkaus&quot;, new Leikkaus(io));</span>
+<span class="nc" id="L36">        komennot.put(&quot;l&quot;, new Leikkaus(io));</span>
+
+<span class="nc" id="L38">        komennot.put(&quot;erotus&quot;, new Erotus(io));</span>
+<span class="nc" id="L39">        komennot.put(&quot;e&quot;, new Erotus(io));</span>
+
+<span class="nc" id="L41">        komennot.put(&quot;lopeta&quot;, new Lopeta(io));</span>
+<span class="nc" id="L42">        komennot.put(&quot;quit&quot;, new Lopeta(io));</span>
+<span class="nc" id="L43">        komennot.put(&quot;q&quot;, new Lopeta(io));</span>
+<span class="nc" id="L44">        tuntematon = new Tuntematon(io);</span>
+<span class="nc" id="L45">    }</span>
+
+    public Komento hae(String operaatio) {
+<span class="nc" id="L48">        return komennot.getOrDefault(operaatio, tuntematon);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Sovellus.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IntJoukkoSovellus</a> &gt; <a href="index.source.html" class="el_package">ohtu.intjoukkosovellus</a> &gt; <span class="el_source">Sovellus.java</span></div><h1>Sovellus.java</h1><pre class="source lang-java linenums">package ohtu.intjoukkosovellus;
+
+import java.util.HashMap;
+import java.util.Map;
+import ohtu.intjoukkosovellus.io.IO;
+import ohtu.intjoukkosovellus.io.KonsoliIO;
+import ohtu.intjoukkosovellus.komento.Komentotehdas;
+
+public class Sovellus {
+
+    public static Map&lt;String, IntJoukko&gt; joukot;
+    public static final String KOMENNOT
+            = &quot;Komennot ovat lisää(li), poista(p), kuuluu(k), yhdiste(y),&quot;
+            + &quot;erotus(e), leikkaus(le) ja lopetus(quit)(q).\n &quot;
+            + &quot;Joukon nimi komentona tarkoittaa pyyntöä tulostaa joukko.&quot;;
+
+    private static final String WELLCOME
+            = &quot;Tervetuloa joukkolaboratorioon!&quot;
+            + &quot;Käytössäsi ovat joukot A, B ja C.&quot;;
+
+    private final IO io;
+    private final Komentotehdas komennot;
+
+<span class="nc" id="L24">    public Sovellus() {</span>
+<span class="nc" id="L25">        io = new KonsoliIO();</span>
+<span class="nc" id="L26">        komennot = new Komentotehdas(io);</span>
+
+<span class="nc" id="L28">        joukot = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L29">        joukot.put(&quot;A&quot;, new IntJoukko());</span>
+<span class="nc" id="L30">        joukot.put(&quot;B&quot;, new IntJoukko());</span>
+<span class="nc" id="L31">        joukot.put(&quot;C&quot;, new IntJoukko());</span>
+<span class="nc" id="L32">    }</span>
+
+    public void suorita() {
+<span class="nc" id="L35">        io.print(WELLCOME);</span>
+<span class="nc" id="L36">        io.print(KOMENNOT);</span>
+
+        while (true) {
+<span class="nc" id="L39">            String komento = io.nextLine();</span>
+<span class="nc" id="L40">            komennot.hae(komento.toLowerCase()).suorita();</span>
+<span class="nc" id="L41">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
