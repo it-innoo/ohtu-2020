@@ -21,6 +21,7 @@ public class Erotus extends Komento {
         
         sovellus.miinus(arvo);
         int laskunTulos = sovellus.tulos();
+        tulos = tuloskentta.getText();
 
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);
@@ -30,20 +31,6 @@ public class Erotus extends Komento {
         } else {
             nollaa.disableProperty().set(false);
         }
-        
         undo.disableProperty().set(false);
-    }
-
-    @Override
-    public void peru() {
-        System.out.println("undo pressed");
-    }
-    
-    private int getArvo() {
-        try {
-            return Integer.parseInt(syotekentta.getText());
-        } catch (NumberFormatException e) {
-            return 0;
-        }
     }
 }

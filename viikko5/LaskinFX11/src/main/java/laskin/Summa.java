@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class Summa extends Komento {
-
+    
     public Summa(TextField tuloskentta,
             TextField syotekentta,
             Button nollaa,
@@ -20,6 +20,7 @@ public class Summa extends Komento {
         
         sovellus.plus(arvo);
         int laskunTulos = sovellus.tulos();
+        tulos = tuloskentta.getText();
 
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);
@@ -29,20 +30,6 @@ public class Summa extends Komento {
         } else {
             nollaa.disableProperty().set(false);
         }
-        
         undo.disableProperty().set(false);
-    }
-
-    @Override
-    public void peru() {
-        System.out.println("undo pressed");
-    }
-
-    private int getArvo() {
-        try {
-            return Integer.parseInt(syotekentta.getText());
-        } catch (NumberFormatException e) {
-            return 0;
-        }
     }
 }

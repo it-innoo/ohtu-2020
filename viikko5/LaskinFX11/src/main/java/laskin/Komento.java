@@ -13,8 +13,11 @@ public abstract class Komento {
     protected Button nollaa;
     protected Button undo;
     protected Sovelluslogiikka sovellus;
+    
+    protected String tulos;
 
-    public Komento(TextField tuloskentta,
+    public Komento(
+            TextField tuloskentta,
             TextField syotekentta,
             Button nollaa,
             Button undo,
@@ -27,6 +30,17 @@ public abstract class Komento {
     }
     
     public abstract void suorita();
+   
+    public void peru() {
+        syotekentta.setText("");
+        tuloskentta.setText(tulos);
+    }
     
-    public abstract void peru();
+    protected int getArvo() {
+        try {
+            return Integer.parseInt(syotekentta.getText());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
 }

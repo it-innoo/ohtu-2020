@@ -16,11 +16,10 @@ public class Nollaa extends Komento {
 
     @Override
     public void suorita() {
-        
-        
         sovellus.nollaa();
 
         int laskunTulos = sovellus.tulos();
+        tulos = tuloskentta.getText();
 
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);
@@ -30,13 +29,6 @@ public class Nollaa extends Komento {
         } else {
             nollaa.disableProperty().set(false);
         }
-        
         undo.disableProperty().set(false);
     }
-
-    @Override
-    public void peru() {
-        System.out.println("undo pressed");
-    }
-    
 }
