@@ -1,14 +1,7 @@
-*.tmp
-*.swp
 /build/
 /.gradle/
 
-.classpath
-.project
-.settings
-.vscode
-bin/
-**/lib/
 
-.hours
+
+
 
