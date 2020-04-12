@@ -26,7 +26,7 @@ public class GraafinenLaskin extends Pane {
         undo.disableProperty().set(true);
         
         napit.getChildren().addAll(plus, miinus, nollaa, undo);
-                 
+        
         EventHandler kasittelija = new Tapahtumankuuntelija(
                 tuloskentta,
                 syotekentta,
@@ -45,4 +45,5 @@ public class GraafinenLaskin extends Pane {
         
         getChildren().add(layout);
     }
+
 }

@@ -1,7 +1,7 @@
 *.tmp
 *.swp
-build/*
-.gradle/*
+/build/
+/.gradle/
 
 .classpath
 .project
