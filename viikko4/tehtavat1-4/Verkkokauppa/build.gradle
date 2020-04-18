@@ -1,18 +1,11 @@
 
-
-
 plugins {
     id 'java'
     id 'application'
+    id 'checkstyle'
     id 'jacoco'
 }
 
-/*
-apply plugin: 'java'
-
-apply plugin: 'application'
-apply plugin: "jacoco" 
-*/
 repositories {
     jcenter()
 }
@@ -27,7 +20,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+
+
 mainClassName = 'ohtu.Main'
+
 
 run {
     standardInput = System.in

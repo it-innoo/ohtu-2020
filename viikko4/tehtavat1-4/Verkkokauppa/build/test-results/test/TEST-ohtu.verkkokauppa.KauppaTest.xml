@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-05T17:41:27" hostname="jukka-ubuntu" time="4.407">
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-18T08:19:36" hostname="jukka-ubuntu" time="5.818">
   <properties/>
-  <testcase name="ostoksenPaatyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="4.272"/>
-  <testcase name="kaksiEriOstostaVeloitetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.021"/>
-  <testcase name="pyydetaanUusiViiteJokaiselleTapahtumalle" classname="ohtu.verkkokauppa.KauppaTest" time="0.017"/>
-  <testcase name="olematontaTuotettaEiVeloiteta" classname="ohtu.verkkokauppa.KauppaTest" time="0.031"/>
-  <testcase name="kaksiOstostaVeloitetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.03"/>
-  <testcase name="aloitaAsiointiNollaaEdellisen" classname="ohtu.verkkokauppa.KauppaTest" time="0.024"/>
+  <testcase name="ostoksenPaatyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="5.651"/>
+  <testcase name="kaksiEriOstostaVeloitetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.017"/>
+  <testcase name="pyydetaanUusiViiteJokaiselleTapahtumalle" classname="ohtu.verkkokauppa.KauppaTest" time="0.016"/>
+  <testcase name="olematontaTuotettaEiVeloiteta" classname="ohtu.verkkokauppa.KauppaTest" time="0.047"/>
+  <testcase name="kaksiOstostaVeloitetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.039"/>
+  <testcase name="aloitaAsiointiNollaaEdellisen" classname="ohtu.verkkokauppa.KauppaTest" time="0.035"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,17 +1,11 @@
 package ohtu.verkkokauppa;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-/**
- *
- * @author jukka
- */
+import org.junit.Before;
+import org.junit.Test;
+
+
 public class KauppaTest {
 
     private Pankki pankki;
@@ -38,7 +32,7 @@ public class KauppaTest {
 
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        kauppa.lisaaKoriin(1);
         kauppa.tilimaksu("pekka", "12345");
 
         // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
@@ -55,8 +49,8 @@ public class KauppaTest {
 
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        kauppa.lisaaKoriin(1);
+        kauppa.lisaaKoriin(1);
         kauppa.tilimaksu("pekka", "12345");
 
         verify(pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(10));
@@ -74,8 +68,8 @@ public class KauppaTest {
 
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        kauppa.lisaaKoriin(2);     // ostetaan tuotetta numero 2 eli piimää
+        kauppa.lisaaKoriin(1);
+        kauppa.lisaaKoriin(2);
         kauppa.tilimaksu("pekka", "12345");
 
         verify(pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(11));
@@ -93,8 +87,8 @@ public class KauppaTest {
 
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        kauppa.lisaaKoriin(2);     // ostetaan tuotetta numero 2 eli piimää
+        kauppa.lisaaKoriin(1);
+        kauppa.lisaaKoriin(2);
         kauppa.tilimaksu("pekka", "12345");
 
         verify(pankki).tilisiirto(eq("pekka"), eq(42), eq("12345"), anyString(), eq(5));
@@ -108,7 +102,7 @@ public class KauppaTest {
 
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        kauppa.lisaaKoriin(1);
         kauppa.tilimaksu("pekka", "12345");
 
         verify(pankki).tilisiirto(eq("pekka"), eq(42), anyString(), anyString(), eq(5));
@@ -126,7 +120,7 @@ public class KauppaTest {
         
         // tehdään ostokset
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        kauppa.lisaaKoriin(1);
         kauppa.tilimaksu("pekka", "12345");
         
         verify(viite, times(1)).uusi();

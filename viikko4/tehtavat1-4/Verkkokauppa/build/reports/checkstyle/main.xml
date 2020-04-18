@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.27">
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/AppConfig.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/Main.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Kauppa.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Kirjanpito.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/KirjanpitoInterface.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Ostoskori.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Pankki.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/PankkiInterface.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Tuote.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Varasto.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/VarastoInterface.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/Viitegeneraattori.java">
+</file>
+<file name="/home/jukka/projects/ohjelmistotuotanto/ohtu-2020/viikko4/tehtavat1-4/Verkkokauppa/src/main/java/ohtu/verkkokauppa/ViitegeneraattoriInterface.java">
+</file>
+</checkstyle>

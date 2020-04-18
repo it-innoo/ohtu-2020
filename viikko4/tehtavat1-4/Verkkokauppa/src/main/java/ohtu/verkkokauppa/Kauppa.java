@@ -13,7 +13,10 @@ public class Kauppa {
     private String kaupanTili;
 
     @Autowired
-    public Kauppa(VarastoInterface varasto, PankkiInterface pankki, ViitegeneraattoriInterface viitegeneraattori) {
+    public Kauppa(
+            VarastoInterface varasto,
+            PankkiInterface pankki,
+            ViitegeneraattoriInterface viitegeneraattori) {
         this.varasto = varasto;
         this.pankki = pankki;
         this.viitegeneraattori = viitegeneraattori;
@@ -30,7 +33,7 @@ public class Kauppa {
     }
 
     public void lisaaKoriin(int id) {
-        if (varasto.saldo(id)>0) {
+        if (varasto.saldo(id) > 0) {
             Tuote t = varasto.haeTuote(id);             
             ostoskori.lisaa(t);
             varasto.otaVarastosta(t);

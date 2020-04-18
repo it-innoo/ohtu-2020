@@ -16,7 +16,7 @@ public class Tuote {
     public boolean equals(Object o) {
         Tuote t = (Tuote)o;
         
-        return id==t.id;
+        return id == t.id;
     }
 
     public int getId() {
