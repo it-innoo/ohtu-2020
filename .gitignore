@@ -1,7 +1,9 @@
 /build/
 /.gradle/
+.hours.md
 
 
 
 
 
+/viikko6/QueryLanguage/build/
