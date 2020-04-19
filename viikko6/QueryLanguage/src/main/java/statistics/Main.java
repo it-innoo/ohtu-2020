@@ -40,5 +40,14 @@ public class Main {
         stats.matches(m).forEach((player) -> {
             System.out.println(player);
         });
+
+        System.out.println("\n=====\n");
+        m = new Or(new HasAtLeast(20, "goals"),
+                new HasAtLeast(20, "assists")
+        );
+        
+        stats.matches(m).forEach((player) -> {
+            System.out.println(player);
+        });
     }
 }
