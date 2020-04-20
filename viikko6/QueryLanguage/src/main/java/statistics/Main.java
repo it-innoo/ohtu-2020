@@ -12,40 +12,21 @@ public class Main {
 
         Statistics stats = new Statistics(new PlayerReaderImpl(url));
 
-        Matcher m = new And(new HasAtLeast(5, "goals"),
-                new HasAtLeast(5, "assists"),
-                new PlaysIn("PHI")
-        );
-
-        stats.matches(m).forEach((player) -> {
-            System.out.println(player);
-        });
-
         System.out.println("\n=====\n");
-        m = new And(
-                new Not(new HasAtLeast(1, "goals")),
-                new PlaysIn("NYR")
-        );
-
-        stats.matches(m).forEach((player) -> {
-            System.out.println(player);
-        });
-
-        System.out.println("\n=====\n");
-        m = new And(
-                new HasFewerThan(1, "goals"),
-                new PlaysIn("NYR")
-        );
-
-        stats.matches(m).forEach((player) -> {
-            System.out.println(player);
-        });
-
-        System.out.println("\n=====\n");
-        m = new Or(new HasAtLeast(20, "goals"),
-                new HasAtLeast(20, "assists")
-        );
         
+        QueryBuilder query = new QueryBuilder();
+        /*
+        Matcher m = query.playsIn("NYR")
+                .hasAtLeast(5, "goals")
+                //.hasFewerThan(10, "goals")
+                .build();
+        */
+        Matcher m = new And(
+                new PlaysIn("NYR"),
+                new HasAtLeast(5, "goals"),
+                new HasFewerThan(10, "goals")
+        );
+
         stats.matches(m).forEach((player) -> {
             System.out.println(player);
         });

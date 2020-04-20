@@ -9,8 +9,17 @@
         <property name="file" value="${config_loc}/suppressions.xml"/>
     </module>
     
-    <module name="FileTabCharacter">
-        <property name="eachLine" value="true"/>
+    <!-- Checks for whitespace                               -->
+    <!-- See https://checkstyle.org/config_whitespace.html -->
+    <module name="FileTabCharacter"/>
+
+    <!-- Miscellaneous other checks.                   -->
+    <!-- See https://checkstyle.org/config_misc.html -->
+    <module name="RegexpSingleline">
+        <property name="format" value="\s+$"/>
+        <property name="minimum" value="0"/>
+        <property name="maximum" value="0"/>
+        <property name="message" value="Line has trailing spaces."/>
     </module>
 
     <module name="FileLength">
