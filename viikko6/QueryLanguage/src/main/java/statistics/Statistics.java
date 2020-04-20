@@ -8,7 +8,7 @@ import statistics.matcher.Matcher;
 
 public class Statistics {
 
-    private List<Player> players;
+    private final List<Player> players;
 
     public Statistics(PlayerReader playerReader) {
         players = playerReader.getPlayers();
@@ -25,20 +25,21 @@ public class Statistics {
     }
 
     public List<Player> team(String teamName) {
-        ArrayList<Player> playersOfTeam = new ArrayList<Player>();
+        ArrayList<Player> playersOfTeam = new ArrayList<>();
 
-        for (Player player : players) {
-            if (player.getTeam().equals(teamName)) {
-                playersOfTeam.add(player);
-            }
-        }
+        players.stream()
+                .filter((player) -> (player.getTeam()
+                .equals(teamName)))
+                .forEachOrdered((player) -> {
+                    playersOfTeam.add(player);
+                });
 
         return playersOfTeam;
     }
 
     public List<Player> topScorers(int howMany) {
         Collections.sort(players);
-        ArrayList<Player> topScorers = new ArrayList<Player>();
+        ArrayList<Player> topScorers = new ArrayList<>();
         Iterator<Player> playerIterator = players.iterator();
 
         while (howMany >= 0) {
@@ -50,13 +51,11 @@ public class Statistics {
     }
 
     public List<Player> matches(Matcher matcher) {
-        ArrayList<Player> matches = new ArrayList<Player>();
+        ArrayList<Player> matches = new ArrayList<>();
 
-        for (Player player : players) {
-            if (matcher.matches(player)) {
-                matches.add(player);
-            }
-        }
+        players.stream().filter((player) -> (matcher.matches(player))).forEachOrdered((player) -> {
+            matches.add(player);
+        });
 
         return matches;
     }
