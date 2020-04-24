@@ -64,7 +64,7 @@ public class TekoalyParannettu extends Tekoaly {
             return "k";
         }
 
-        // Tehokkaampiakin tapoja löytyy, mutta niistä lisää 
+        // Tehokkaampiakin tapoja löytyy, mutta niistä lisää
         // Johdatus Tekoälyyn kurssilla!
     }
 }

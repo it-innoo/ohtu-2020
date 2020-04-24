@@ -37,7 +37,6 @@ public class Tuomari {
     public void tietokoneVoitti() {
         this.tietokonePisteet++;
     }
-    
     // sisäinen metodi, jolla tarkastetaan tuliko tasapeli
     private static boolean tasapeli(String eka, String toka) {
         return eka.equals(toka);
